@@ -39,5 +39,7 @@ RUN apk add --update --virtual .build-deps \
 ENV PUREFTPD_PUBLICHOST=localhost
 
 COPY docker-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 21 30000-30009
